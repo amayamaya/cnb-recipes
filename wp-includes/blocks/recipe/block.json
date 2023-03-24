@@ -1,0 +1,75 @@
+{
+  "name": "recipe",
+  "title": "Recipe",
+  "description": "Display a recipe with ingredients and instructions.",
+  "image": "https://cdn.shopify.com/s/files/1/0279/5466/4855/articles/Moroccan-Beef-Stew_2048x.jpg?v=1631040673",
+  "icon": "book-alt",
+  "category": "recipe",
+  "keywords": ["recipe", "cookbook", "food"],
+  "attributes": {
+    "title": {
+      "type": "string",
+      "source": "text",
+      "selector": ".recipe-title"
+    },
+    "totalTime": {
+      "type": "text",
+      "source": "children",
+      "selector": ".recipe-ingredients"
+    },
+    "yield": {
+      "type": "number",
+      "source": "children",
+      "selector": ".recipe-yield"
+    },
+    "difficulty": {
+      "type": "text",
+      "source": "children",
+      "selector": ".recipe-difficulty"
+    },
+    "ingredients": {
+      "type": "array",
+      "source": "children",
+      "selector": ".recipe-ingredients"
+    },
+    "instructions": {
+      "type": "array",
+      "source": "children",
+      "selector": ".recipe-instructions"
+    }
+  },
+  "supports": {
+    "align": ["wide", "full"],
+    "html": false
+  },
+  "example": {
+    "attributes": {
+      "title": "Moroccan Beef Stew Recipe",
+      "totalTime": "1 hour",
+      "servings": "4",
+      "difficulty": "Easy",
+      "ingredients": [
+        "1 cup all-purpose flour",
+        "1/2 teaspoon baking soda",
+        "1/4 teaspoon salt",
+        "1/2 cup unsalted butter, at room temperature",
+        "1/2 cup granulated sugar",
+        "1/2 cup light brown sugar",
+        "1 large egg",
+        "1/2 teaspoon vanilla extract",
+        "1 cup semisweet chocolate chips"
+      ],
+      "instructions": [
+        "Preheat oven to 375°F (190°C).",
+        "In a medium bowl, whisk together flour, baking soda, and salt.",
+        "In a large bowl, cream butter, granulated sugar, and brown sugar until light and fluffy.",
+        "Beat in egg and vanilla.",
+        "Gradually mix in flour mixture.",
+        "Stir in chocolate chips.",
+        "Drop dough by rounded tablespoons onto ungreased baking sheets.",
+        "Bake for 10-12 minutes or until golden brown.",
+        "Cool on baking sheets for 5 minutes before transferring to wire racks to cool completely."
+      ]
+    }
+  }
+}
