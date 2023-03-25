@@ -1,0 +1,13 @@
+{
+    "name": "amaya/cnb-recipes",
+    "description": "[Country Natura",
+    "require": {
+        "composer": "^2.5"
+    },
+    "authors": [
+        {
+            "name": "amayamaya",
+            "email": "aamaya547@gmail.com"
+        }
+    ]
+}
