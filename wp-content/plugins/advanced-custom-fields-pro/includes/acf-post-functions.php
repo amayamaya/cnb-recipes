@@ -38,4 +38,3 @@ function acf_get_post_templates() {
 	// Return templates.
 	return $post_templates;
 }
- 
