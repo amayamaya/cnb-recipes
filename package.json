@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/amayamaya/country-natural-beef-recipes#readme",
   "dependencies": {
+    "lint": "^1.1.2",
     "sass": "^1.60.0"
   }
 }
