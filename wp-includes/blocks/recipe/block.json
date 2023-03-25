@@ -1,75 +1,231 @@
-{
-  "name": "recipe",
-  "title": "Recipe",
-  "description": "Display a recipe with ingredients and instructions.",
-  "image": "https://cdn.shopify.com/s/files/1/0279/5466/4855/articles/Moroccan-Beef-Stew_2048x.jpg?v=1631040673",
-  "icon": "book-alt",
-  "category": "recipe",
-  "keywords": ["recipe", "cookbook", "food"],
-  "attributes": {
-    "title": {
-      "type": "string",
-      "source": "text",
-      "selector": ".recipe-title"
-    },
-    "totalTime": {
-      "type": "text",
-      "source": "children",
-      "selector": ".recipe-ingredients"
-    },
-    "yield": {
-      "type": "number",
-      "source": "children",
-      "selector": ".recipe-yield"
-    },
-    "difficulty": {
-      "type": "text",
-      "source": "children",
-      "selector": ".recipe-difficulty"
-    },
-    "ingredients": {
-      "type": "array",
-      "source": "children",
-      "selector": ".recipe-ingredients"
-    },
-    "instructions": {
-      "type": "array",
-      "source": "children",
-      "selector": ".recipe-instructions"
-    }
-  },
-  "supports": {
-    "align": ["wide", "full"],
-    "html": false
-  },
-  "example": {
-    "attributes": {
-      "title": "Moroccan Beef Stew Recipe",
-      "totalTime": "1 hour",
-      "servings": "4",
-      "difficulty": "Easy",
-      "ingredients": [
-        "1 cup all-purpose flour",
-        "1/2 teaspoon baking soda",
-        "1/4 teaspoon salt",
-        "1/2 cup unsalted butter, at room temperature",
-        "1/2 cup granulated sugar",
-        "1/2 cup light brown sugar",
-        "1 large egg",
-        "1/2 teaspoon vanilla extract",
-        "1 cup semisweet chocolate chips"
-      ],
-      "instructions": [
-        "Preheat oven to 375°F (190°C).",
-        "In a medium bowl, whisk together flour, baking soda, and salt.",
-        "In a large bowl, cream butter, granulated sugar, and brown sugar until light and fluffy.",
-        "Beat in egg and vanilla.",
-        "Gradually mix in flour mixture.",
-        "Stir in chocolate chips.",
-        "Drop dough by rounded tablespoons onto ungreased baking sheets.",
-        "Bake for 10-12 minutes or until golden brown.",
-        "Cool on baking sheets for 5 minutes before transferring to wire racks to cool completely."
+[
+  {
+    "key": "group_641c9c7dc2966",
+    "title": "Recipe Block",
+    "fields": [
+      {
+        "key": "field_641c9c7e78206",
+        "label": "Title",
+        "name": "title",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Place your recipe title here",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_641e49e290658",
+        "label": "Collaborator",
+        "name": "collaborator",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Stock Pot Collective",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_641e4a1a90659",
+        "label": "Image",
+        "name": "image",
+        "aria-label": "",
+        "type": "image",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "return_format": "array",
+        "library": "all",
+        "min_width": "",
+        "min_height": "",
+        "min_size": "",
+        "max_width": "",
+        "max_height": "",
+        "max_size": "",
+        "mime_types": "",
+        "preview_size": "medium"
+      },
+      {
+        "key": "field_641c9df468e38",
+        "label": "Total Time",
+        "name": "total_time",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "45 min",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_641c9c9b68e37",
+        "label": "Yield",
+        "name": "yield",
+        "aria-label": "",
+        "type": "number",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": 4,
+        "min": "",
+        "max": "",
+        "placeholder": "",
+        "step": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_641d315db95e2",
+        "label": "Difficulty",
+        "name": "difficulty",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Easy",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      },
+      {
+        "key": "field_641d317bb95e3",
+        "label": "Ingredients",
+        "name": "ingredients",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "List ingredients here.",
+        "maxlength": "",
+        "rows": "",
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_641d31a0b95e4",
+        "label": "Instructions",
+        "name": "instructions",
+        "aria-label": "",
+        "type": "textarea",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "Describe the process.",
+        "maxlength": "",
+        "rows": "",
+        "placeholder": "",
+        "new_lines": ""
+      },
+      {
+        "key": "field_641e4e4b9065a",
+        "label": "Background Color",
+        "name": "background_color",
+        "aria-label": "",
+        "type": "color_picker",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#C7E2E7",
+        "enable_opacity": 0,
+        "return_format": "string"
+      },
+      {
+        "key": "field_641e4ec79065b",
+        "label": "Text Color",
+        "name": "text_color",
+        "aria-label": "",
+        "type": "text",
+        "instructions": "",
+        "required": 0,
+        "conditional_logic": 0,
+        "wrapper": {
+          "width": "",
+          "class": "",
+          "id": ""
+        },
+        "default_value": "#393837",
+        "maxlength": "",
+        "placeholder": "",
+        "prepend": "",
+        "append": ""
+      }
+    ],
+    "location": [
+      [
+        {
+          "param": "block",
+          "operator": "==",
+          "value": "acf/recipe"
+        }
       ]
-    }
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0
   }
-}
+]
