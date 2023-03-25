@@ -149,10 +149,29 @@ function cnb_recipes_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cnb_recipes_scripts' );
 
-function register_acf_blocks() {
-    register_block_type( __DIR__ . '/Users/amaya/DevKinsta/public/cnb-recipes/wp-includes/blocks/recipe/block.json' );
+/**
+ * Summary of register_acf_blocks
+ */
+function my_acf_init_block_types() {
+	
+	// Check function exists.
+    if( function_exists('acf_register_block_type') ) {
+		
+		// register recipe block.
+        acf_register_block_type(array(
+			'name'              => 'recipe',
+            'title'             => __('Recipe'),
+            'description'       => __('A custom recipe block.'),
+            'render_template'   => 'template-parts/blocks/recipe/recipe.php',
+            'category'          => 'formatting',
+            'icon'              => 'admin-comments',
+            'keywords'          => array( 'recipe', 'quote' ),
+        ));
+    }
+	
 }
-add_action( 'init', 'register_acf_blocks' );
+add_action('acf/init', 'my_acf_init_block_types');
+
 
 
 /**
