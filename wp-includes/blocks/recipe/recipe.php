@@ -25,10 +25,14 @@ if( !empty($block['align']) ) {
 }
 
 // Load values and assign defaults.
-$text             = get_field('recipe') ?: 'Your recipe here...';
-$author           = get_field('author') ?: 'Author name';
-$role             = get_field('role') ?: 'Author role';
+$text             = get_field('recipe') ?: 'Place your recipe title here';
+$collaborator     = get_field('collaborator') ?: 'Stock Pot Collective';
 $image            = get_field('image') ?: 295;
+$total_time       = get_field('total_time') ?: '30 minutes';
+$yield            = get_field('yield') ?: '4 servings';
+$difficulty       = get_field('difficulty') ?: 'Easy';
+$ingredients      = get_field('ingredients') ?: 'List ingredients here';
+$instructions     = get_field('instructions') ?: 'Describe the process.';
 $background_color = get_field('background_color');
 $text_color       = get_field('text_color');
 
@@ -36,8 +40,12 @@ $text_color       = get_field('text_color');
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <blockquote class="recipe-blockquote">
         <span class="recipe-text"><?php echo $text; ?></span>
-        <span class="recipe-author"><?php echo $author; ?></span>
-        <span class="recipe-role"><?php echo $role; ?></span>
+        <span class="recipe-collaborator"><?php echo $collaborator; ?></span>
+        <span class="recipe-total-time"><?php echo $total_time; ?></span>
+        <span class="recipe-yield"><?php echo $yield; ?></span>
+        <span class="recipe-difficulty"><?php echo $difficulty; ?></span>
+        <span class="recipe-ingredients"><?php echo $ingredients; ?></span>
+        <span class="recipe-instructions"><?php echo $instructions; ?></span>
     </blockquote>
     <div class="recipe-image">
         <?php echo wp_get_attachment_image( $image, 'full' ); ?>
