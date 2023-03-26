@@ -164,15 +164,13 @@ function my_acf_init_block_types() {
             'description'       => __('A custom recipe block.'),
             'render_template'   => 'template-parts/blocks/recipe/recipe.php',
             'category'          => 'formatting',
-            'icon'              => 'admin-comments',
-            'keywords'          => array( 'recipe', 'quote' ),
+            'icon'              => 'dashicons-food',
+            'keywords'          => array( 'recipe', 'dish' ),
         ));
     }
 	
 }
 add_action('acf/init', 'my_acf_init_block_types');
-
-
 
 /**
  * Implement the Custom Header feature.
