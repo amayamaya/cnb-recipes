@@ -1,5 +1,20 @@
 <?php
 
+/**
+ * recipe Block Template.
+ *
+ * @param    array        $block      The block settings and attributes.
+ * @param    string       $content    The block inner HTML (empty).
+ * @param    bool         $is_preview True during AJAX preview.
+ * @param    (int|string) $post_id    The post ID this block is saved to.
+ */
+ 
+// Create id attribute allowing for custom "anchor" value.
+$id = 'recipe-' . $block['id'];
+if( !empty($block['anchor']) ) {
+    $id = $block['anchor'];
+}
+
 $className = 'recipe';
 if( !empty($block['className']) ) {
     $className .= ' ' . $block['className'];
@@ -10,7 +25,7 @@ if( !empty($block['align']) ) {
 
 ?>
 
-<div class="<?php echo $anchor; ?>class="<?php echo esc_attr( $class_name ); ?>">
+<div id="<?php echo $id; ?>" class="<?php echo esc_attr( $className ); ?>">
     <div class="grid-x grid-margin-x">
         <div class="cell">
             <?php if (have_rows('recipe')) : ?>

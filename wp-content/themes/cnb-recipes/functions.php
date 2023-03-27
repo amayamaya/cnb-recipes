@@ -149,27 +149,7 @@ function cnb_recipes_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'cnb_recipes_scripts' );
 
-/**
- * Summary of register_acf_blocks
- */
-function my_acf_init_block_types() {
-	
-	// Check function exists.
-    if( function_exists('acf_register_block_type') ) {
-		
-		// register recipe block.
-        acf_register_block_type(array(
-			'name'              => 'recipe',
-            'title'             => __('Recipe'),
-            'description'       => __('A custom recipe block.'),
-            'render_template'   => 'template-parts/blocks/recipe/recipe.php',
-            'category'          => 'formatting',
-            'icon'              => 'dashicons-food',
-            'keywords'          => array( 'recipe', 'dish' ),
-        ));
-    }
-	
-}
+
 add_action('acf/init', 'my_acf_init_block_types');
 
 /**
@@ -196,6 +176,28 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
-	require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Summary of register_acf_blocks
+ */
+function my_acf_init_block_types() {
+	
+		// Check function exists.
+		if( function_exists('acf_register_block_type') ) {
+			
+			// register recipe block.
+			acf_register_block_type(
+				array( 
+				'name'              => 'recipe',
+				'title'             => __('Recipe'),
+				'description'       => __('A custom recipe block.'),
+				'render_template'   => '/cnb-recipes/template-parts/blocks/recipe/recipe.php',
+				'category'          => 'formatting',
+				'icon'              => 'dashicons-food',
+				'keywords'          => array( 'recipe', 'dish' ),
+			)
+		);
+	}
+}
